@@ -43,27 +43,30 @@
             <!--Barra lateral-->
             <aside id="lateral">
                 <div id="login" class="block_aside">
-                    <form action="#" method="POST">
+                    <h3>Entrar a la web</h3>
+                    <form action="#" method="POST" id="ingresar">
 
                         <label for="email">Email</label>
                         <input type="email" name="email">
 
-                        <label for="password">password</label>
+                        <label for="password">Password</label>
                         <input type="password" name="password">
 
                         <input type="submit" value="ingresar" name="ingresar">
                     </form>
 
-                    <a href="#">Mis pedidos</a>
-                    <a href="#">Gestionar pedidos</a>
-                    <a href="#">Gestionar categorias</a>
+                    <ul>
+                        <li><a href="#">Mis pedidos</a></li>
+                        <li><a href="#">Gestionar pedidos</a></li>
+                        <li><a href="#">Gestionar categorias</a></li>
+                    </ul>
 
                 </div>
             </aside>
 
             <!--Contenido Principal-->
             <div id="central">
-
+                <h1>PRODUCTOS DESTACADOS</h1>
                 <div class="product">
                     <img src="assets/img/shirt.jpg">
                     <h2>BERSERK SHIRT BLACK COTTOM</h2>
