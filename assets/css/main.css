@@ -1,0 +1,53 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+
+#central{
+}
+
+
+#berk{
+    width:  300px;
+    height: 250px;
+}
+
+a{
+    color:red;
+}
+
+#header{
+    background-color: black;
+}
+
+a:visited{
+    text-decoration: none;
+    color:red;
+}
+
+a:link{
+    text-decoration: none;
+    color:red;
+}
+
+a:active{
+    text-decoration: none;
+    color:red;
+}
+#home{
+    color:white;       
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.product img{
+    width: 200px;
+}
+
+#container{
+    width: 80%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 10px #1e1e1e;
+    background-image: url("../img/bamboo.jpg");
+}
