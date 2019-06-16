@@ -49,5 +49,50 @@ a:active{
     width: 80%;
     margin: 0px auto;
     box-shadow: 0px 0px 10px #1e1e1e;
-    background-image: url("../img/bamboo.jpg");
+    /*background-image: url("../img/bamboo.jpg");*/
+}
+
+#menu ul{
+    background-color: black;
+    list-style-type: none;
+    overflow: hidden;
+    font-family: 'Advent Pro', sans-serif;
+    border-bottom: 4px solid red;
+}
+
+#menu li{
+    font-family: 'Advent Pro', sans-serif;
+    float: left;
+}
+
+#menu li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+#content{
+  margin:0px auto;
+  overflow: hidden;
+  background: white;
+}
+
+#lateral{
+    border: 1px solid black;
+    width: 25%;
+    float: left;
+    margin-top:20px;
+    margin-left:10px;
+    min-height: 800px;
+}
+
+#lateral .bloack_aside{
+    display:block;
+    width: 90%;
+    margin: 5px auto;
+    padding: 10px;
+    border: 1px solid red;
 }
