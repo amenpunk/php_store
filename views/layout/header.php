@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Sticker Store</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="<?=base_url?>assets/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro&display=swap" rel="stylesheet">
 </head>
 
@@ -15,8 +15,8 @@
 
         <header id="header">
             <div id="logo">
-                <img id="berk" src="assets/img/logo.png" alt="berserk logo">
-                <a href="index.php" id="home">Berserk Store 愁い</a>
+                <img id="berk" src="<?=base_url?>assets/img/logo.png" alt="berserk logo">
+                <a href="<?=base_url?>index.php" id="home">Berserk Store 愁い</a>
             </div>
         </header>
 
