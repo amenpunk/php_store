@@ -3,10 +3,6 @@
     margin:0px;
 }
 
-#central{
-}
-
-
 #berk{
     width:  300px;
     height: 250px;
@@ -22,18 +18,16 @@ a{
 
 a:visited{
     text-decoration: none;
-    color:#ed4242;
 }
 
 a:link{
     text-decoration: none;
-    color:#ed4242;
 }
 
 a:active{
     text-decoration: none;
-    color:#ed4242;
 }
+
 #home{
     color:white;       
     font-size: 50px;
@@ -89,6 +83,7 @@ a:active{
     min-height: 800px;
 }
 
+/*
 #lateral .bloack_aside{
     display:block;
     width: 90%
@@ -96,6 +91,7 @@ a:active{
     margin: 5px auto;
     padding: 10px;
 }
+*/
 
 input[type="text"],
 input[type="password"],
@@ -117,6 +113,20 @@ input[type="email"]:focus {
 input[type="button"],
 input[type="submit"],
 button{
+    margin-left: 25px;
+    margin-top: 15px;
+    display: block;
+    width:83%;
+    padding: 5px;
+    color: white;
+    background:#ed4242;
+    border: 1px solid white;
+    cursor:pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.button{
     display: block;
     border-radius: 2px;
     width: auto;
@@ -135,14 +145,22 @@ label{
 }
 
 #lateral ul{
-   margin-top: 20px; 
+    color:white;
+   margin-top: 60px; 
    margin-bottom: 20px; 
+}
+#lateral ul li a{
+    color: white;
+    font-size: 14px;
 }
 
 #lateral ul li{
+    background-color: #ed4242;
+    color: white !important;
     list-style: none;
-    margin-left: 20px;
     margin-top: 5px; 
+    text-align: center;
+    padding: 5px;
     margin-bottom: 5px; 
 }
 
@@ -152,8 +170,8 @@ input[type="password"],
 input[type="email"]{
     font-family: 'Advent Pro', sans-serif;
     display: block;
-    width: 75%;
-    margin-bottom: 2px;
+    width: 80%;
+    margin-left: 25px;
 }
 
 #lateral h3{
@@ -174,14 +192,43 @@ input[type="email"]{
     width: 75%;
     float: right;
     border-left: 1px solid #ccc;
+    min-height: 500px;
     box-shadow: -5px -1px 5px #ddd;
 }
 
 #central h1{
     font-size: 25px;
+    font-family: 'Advent Pro', sans-serif;
     font-weight: normal;
     letter-spacing: 1px;
     margin-bottom: 5px;
     text-align: center;
-    border: 1px solid #ccc;:
+    border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding:20px;
+}
+
+div.product{
+    width: 30%;
+    border-right:1px solid white;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+div.product h2{
+    font-size: 15px;
+}
+
+#footer{
+    text-align: center;
+    padding-top: 10px;
+    padding-block: 10px;
+    color:white;
+    background-color: black;
+    clear:both;
+    margin-top: 5px;
+    border-top : 5px solid #ed4242;
 }
