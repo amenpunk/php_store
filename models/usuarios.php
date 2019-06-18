@@ -58,7 +58,9 @@ class Usuario{
      */ 
     public function getPassword()
     {
-        return $this->password;
+        //$this->password = $password;
+        return password_hash($this->db->real_escape_string($this->password), PASSWORD_BCRYPT,['cost' => 4]);
+        //return $this->password;
     }
 
     /**
@@ -69,8 +71,8 @@ class Usuario{
     public function setPassword($password)
     {
         $this->password = $password;
-        return password_hash($this->db->real_escape_string($this), PASSWORD_BCRYPT,['cost' => 4]);
-       // return $this->db->real_escape_string($this); 
+        //return password_hash($this->db->real_escape_string($this), PASSWORD_BCRYPT,['cost' => 4]);
+        //return $this->db->real_escape_string($this); 
     }
 
     /**
@@ -163,5 +165,22 @@ class Usuario{
         
     }
 
+    public function login(){
+        //comprobar si existe el usuario
+        $email = $this->email;
+        $password = $this->password;
+        $result = false;
+        $sql = "SELECT * FROM tienda_master.usuarios where email = '$email'";
+        $login = $this->db->query($sql);
+        if($login && $login->num_rows == 1){
+            $usuario = $login->fetch_object();
+            //verificar la contraseña
+            $verify = password_verify($password, $usuario->password);
+            if($verify){
+               $result = $usuario;
+            }
+        }
+        return $result;
+    }
 
 }

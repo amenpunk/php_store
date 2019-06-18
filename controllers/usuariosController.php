@@ -35,4 +35,43 @@ class usuariosController{
         }
         header("Location:".base_url.'usuarios/registro');
     }
+
+    public function login(){
+        //var_dump($_POST);
+        if(isset($_POST)){
+            $usuario = new Usuario();
+            $usuario->setEmail($_POST['email']);
+            $usuario->setPassword($_POST['password']);
+            $identity = $usuario->login();
+            //indentificar usuario
+            //var_dump(($identity));
+            //die();
+            
+            if($identity && is_object($identity)){
+                $_SESSION['identity'] = $identity; 
+                
+                
+                if($identity->rol == 'admin'){
+                    $_SESSION['admin'] = true;
+                }
+                
+                
+            }else{
+                $_SESSION['error_login'] = 'identificacion fallida!!';
+            }
+            
+        }
+        header("Location:".base_url);
+    }
+
+    public function logout(){
+        if(isset($_SESSION['identity'])){
+            unset($_SESSION['identity']);
+        }
+        if(isset($_SESSION['admin'])){
+            unset($_SESSION['admin']);
+        }
+        header("Location:".base_url);
+    }
+
 }
