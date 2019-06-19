@@ -15,5 +15,12 @@ class Utils{
         }else{
             return true;
         }
-    }    
+    }   
+    
+    public static function showCategories(){
+        require_once 'models/categorias.php';
+        $categoria = new Categorias();
+        $categorias = $categoria->getAll();
+        return $categorias;
+    }
 }
