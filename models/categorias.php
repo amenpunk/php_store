@@ -46,7 +46,7 @@ class Categorias{
      */ 
     public function setNombre($nombre)
     {
-        $this->nombre = $nombre;
+        $this->nombre = $this->db->real_escape_string($nombre);
 
         return $this;
     }
@@ -56,7 +56,7 @@ class Categorias{
      */ 
     public function getId()
     {
-        return $this->id;;j;
+        return $this->id;
     }
 
     /**
@@ -72,7 +72,19 @@ class Categorias{
     }
 
     public function getAll(){
-       $categorias = $this->db->query("SELECT * FROM tienda_master.categorias");
+       $categorias = $this->db->query("SELECT * FROM tienda_master.categorias ORDER BY id DESC");
        return $categorias;
-    }    
+    }   
+    
+    public function save(){
+        $sql  = "INSERT INTO tienda_master.categorias values(NULL,'{$this->getNombre()}')";
+        $save = $this->db->query($sql);
+        $result = false;
+
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+    
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sticker Store</title>
+    <title>Berserk Store</title>
     <link rel="stylesheet" href="<?=base_url?>assets/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro&display=swap" rel="stylesheet">
 </head>

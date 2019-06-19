@@ -1,9 +1,27 @@
+html{
+    background-image: url('/Tienda/assets/img/bamboo.jpg');
+}
+
 table{
     text-align: center;
     width: 100%;
     border: 1px solid black;
 }
 
+td{
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc; 
+}
+
+.button_small{
+    background-color: #ed4242;
+    color:white;
+    padding: 20px;
+}
+
+#menu ul{
+    margin-top:10px;
+}
 
 *{
     padding:0px;
@@ -152,9 +170,11 @@ label{
 }
 
 #lateral ul{
-    color:white;
+   color:white;
+   /*
    margin-top: 60px; 
    margin-bottom: 20px; 
+   */
 }
 #lateral ul li a{
     color: white;
@@ -236,6 +256,6 @@ div.product h2{
     color:white;
     background-color: black;
     clear:both;
-    margin-top: 5px;
+    margin-top: 10px;
     border-top : 5px solid #ed4242;
 }
