@@ -25,10 +25,10 @@
         <?php $categorias = Utils::showCategories(); ?>
         <nav id="menu">
             <ul>
-                <li style="background-color:red;"><a href="<?=base_url?>">Inicio</a></li>
+                <li><a id="primero" href="<?=base_url?>">Inicio</a></li>
                <?php while($cat = $categorias->fetch_object()): ?> 
                     
-                <li><a href="#"><?=$cat->nombre?></a></li>
+                <li><a class="navo" href="#"><?=$cat->nombre?></a></li>
                 
                 <?php endwhile;?>
                 
