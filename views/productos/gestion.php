@@ -1,9 +1,15 @@
 <h1>Gestion de productos</h1>
 
-
 <a style="text-align:center; margin-bottom:10px;" href="<?= base_url ?>productos/crear" class="button button_small">
     Crear producto
 </a>
+
+<?php if(isset($_SESSION['producto']) && $_SESSION['producto'] == 'complete'): ?>
+    <script>alert("Producto Ingresado");</script>
+<?php elseif(isset($_SESSION['producto']) && $_SESSION['producto'] != 'complete'): ?>
+    <Script>alert("Ocurrio un error")</Script>
+<?php endif;?>
+<?php Utils::deleteSession('producto'); ?>
 
 <table>
     <thead>
