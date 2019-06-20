@@ -34,7 +34,7 @@ class Productos{
     {
         $this->stock = $stock;
 
-        return $this;
+        return $this->db->real_escape_string($this);
     }
 
     /**
@@ -54,7 +54,7 @@ class Productos{
     {
         $this->precio = $precio;
 
-        return $this;
+        return $this->db->real_escape_string($this);
     }
 
     /**
@@ -94,7 +94,7 @@ class Productos{
     {
         $this->nombre = $nombre;
 
-        return $this;
+        return $this->db->real_escape_string($this);
     }
 
     /**
@@ -114,7 +114,7 @@ class Productos{
     {
         $this->imagen = $imagen;
 
-        return $this;
+        return $this->db->real_escape_string($this);
     }
 
     /**
@@ -154,7 +154,7 @@ class Productos{
     {
         $this->descripcion = $descripcion;
 
-        return $this;
+        return $this->db->real_escape_string($this);
     }
 
     /**
@@ -173,8 +173,7 @@ class Productos{
     public function setCategoria_id($categoria_id)
     {
         $this->categoria_id = $categoria_id;
-
-        return $this;
+        return $this->db->real_escape_string($this);
     }
 
     /**
@@ -200,5 +199,23 @@ class Productos{
     public function getAll(){
         $productos = $this->db->query("SELECT * FROM tienda_master.productos ORDER BY id DESC");
         return $productos;
+    }
+
+    public function save(){
+        $sql  = "INSERT INTO tienda_master.productos values(NULL,{$this->getCategoria_id()},'{$this->getNombre()}','{$this->getDescripcion()}',{$this->getPrecio()},{$this->getStock()}, 'NO',CURDATE(),NULL)";
+        $save = $this->db->query($sql);
+        $result = false;
+
+       /* 
+        echo $sql;
+        echo "</br>";
+        echo $this->db->error;
+        die();
+        */
+        if($save){
+            $result = true;
+        }
+        return $result;
+        
     }
 }

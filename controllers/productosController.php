@@ -24,7 +24,30 @@ class productosController{
     public function save(){
         Utils::isAdmin();
         if(isset($_POST)){
-            var_dump($_POST);
+            $nombre = $_POST['nombre'];
+            $descripcion = $_POST['descripcion'];
+            $precio = $_POST['precio'];
+            $stock = $_POST['stock'];
+            $categoria = $_POST['categoria'];
+            $imagen = $_POST['imagen'];
+            //var_dump($_POST);
+            //die();
+            $producto = new Productos();
+            $producto->setNombre($nombre);
+            $producto->setDescripcion($descripcion);
+            $producto->setPrecio($precio);
+            $producto->setStock($stock);
+            $producto->setCategoria_id($categoria);
+            $producto->setImagen($imagen);
+            $save = $producto->save();
+            if($save){
+                $_SESSION['producto'] = 'complete';   
+            }
+            else{
+                $_SESSION['producto'] = 'failed';
+            }
+//            var_dump($producto);
         }
+        header("Location:".base_url.'productos/gestion');
     }
 }
