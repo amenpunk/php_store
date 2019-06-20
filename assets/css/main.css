@@ -166,6 +166,18 @@ button{
     padding-right: 10px;
 }
 
+.button-small{
+    display: block;
+    border-radius: 2px;
+    width: auto;
+    padding: 2px;
+    color:black;
+    border: 1px solid white;
+    cursor:pointer;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
 label{
     margin-top:10px;
     display: block;

@@ -218,4 +218,15 @@ class Productos{
         return $result;
         
     }
+
+    public function delete(){
+        $sql = "DELETE FROM tienda_master.productos WHERE id={$this->id}";
+        $del = $this->db->query($sql);
+        $result = false;
+        if($del){
+            $result = true;
+        }
+        return $result;
+    }
+
 }

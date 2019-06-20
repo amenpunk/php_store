@@ -6,6 +6,7 @@
     <title>Berserk Store</title>
     <link rel="stylesheet" href="<?=base_url?>assets/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ce99bfb64c.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
         <?php $categorias = Utils::showCategories(); ?>
         <nav id="menu">
             <ul>
-                <li><a id="primero" href="<?=base_url?>">Inicio</a></li>
+                <li><a id="primero" href="<?=base_url?>"><i class="fas fa-home"></i></a></li>
                <?php while($cat = $categorias->fetch_object()): ?> 
                     
                 <li><a class="navo" href="#"><?=$cat->nombre?></a></li>
