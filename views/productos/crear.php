@@ -1,6 +1,6 @@
 <h1>Crear nuevo producto</h1>
 
-<form action="<?= base_url ?>productos/save" method="POST">
+<form action="<?= base_url ?>productos/save" method="POST" enctype="multipart/form-data">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre">
 

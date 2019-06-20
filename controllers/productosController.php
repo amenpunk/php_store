@@ -30,7 +30,11 @@ class productosController{
             $stock = $_POST['stock'];
             $categoria = $_POST['categoria'];
             $imagen = $_POST['imagen'];
-            //var_dump($_POST);
+
+            $file = $_FILES['imagen'];
+            $filename = $file['name'];
+            $mimetype = $file['type'];
+            //var_dump($file);
             //die();
             $producto = new Productos();
             $producto->setNombre($nombre);
@@ -38,7 +42,22 @@ class productosController{
             $producto->setPrecio($precio);
             $producto->setStock($stock);
             $producto->setCategoria_id($categoria);
-            $producto->setImagen($imagen);
+           // $producto->setImagen($imagen);
+            
+            //guardar la imagen
+            if($mimetype == 'image/jpg' || $mimetype == 'image/jpeg' || $mimetype == 'image/png' || $mimetype == 'image/gif'){
+               // var_dump($file);
+                //die();
+
+                
+                if(!is_dir('uploads/images')){
+                    mkdir('uploads/images', 0777, true);
+                }   
+                move_uploaded_file($file['tmp_name'],'uploads/images/'.$filename);
+                $producto->setImagen($filename);
+            }                      
+            
+
             $save = $producto->save();
             if($save){
                 $_SESSION['producto'] = 'complete';   

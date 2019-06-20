@@ -202,7 +202,7 @@ class Productos{
     }
 
     public function save(){
-        $sql  = "INSERT INTO tienda_master.productos values(NULL,{$this->getCategoria_id()},'{$this->getNombre()}','{$this->getDescripcion()}',{$this->getPrecio()},{$this->getStock()}, 'NO',CURDATE(),NULL)";
+        $sql  = "INSERT INTO tienda_master.productos values(NULL,{$this->getCategoria_id()},'{$this->getNombre()}','{$this->getDescripcion()}',{$this->getPrecio()},{$this->getStock()}, 'NO',CURDATE(),'{$this->getImagen()}')";
         $save = $this->db->query($sql);
         $result = false;
 
