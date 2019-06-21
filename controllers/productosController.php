@@ -6,9 +6,12 @@ class productosController
 {
     public function index()
     {
-        //echo "Controlador productos, Accion Index";
-        //echo "<h1>Welcome</h1>";
+        $producto = new Productos();
+        $producto = $producto->getRandom(6);
+        //var_dump($producto->fetch_object());
         require_once 'views/productos/destacados.php';
+
+
     }
 
     public function gestion()

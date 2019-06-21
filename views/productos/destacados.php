@@ -1,23 +1,12 @@
 <h1>PRODUCTOS DESTACADOS</h1>
+
+<?php while($pro = $producto->fetch_object()):?>
+
 <div class="product">
-    <img src="assets/img/shirt.jpg">
-    <h2>BERSERK SHIRT BLACK COTTOM</h2>
-    <p>50 Quetzales</p>
+    <img src="<?=base_url?>uploads/images/<?=$pro->imagen?>">
+    <h2><?= $pro->nombre?><h2>
+    <p>Q.<?=$pro->precio?></p>
     <a href="#" class="button">Comprar</a>
 </div>
 
-<div class="product">
-    <img src="assets/img/shirt.jpg">
-    <h2>BERSERK SHIRT BLACK COTTOM</h2>
-    <p>50 Quetzales</p>
-    <a href="#" class="button">Comprar</a>
-</div>
-
-<div class="product">
-    <img src="assets/img/shirt.jpg">
-    <h2>BERSERK SHIRT BLACK COTTOM</h2>
-    <p>50 Quetzales</p>
-    <a href="#" class="button">Comprar</a>
-</div>
-
-</div>
+<?php endwhile; ?>

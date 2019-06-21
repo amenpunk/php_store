@@ -255,5 +255,10 @@ class Productos{
         return $result;
     }
 
+    public function getRandom($limit){
+        $productos = $this->db->query("SELECT * FROM tienda_master.productos ORDER BY RAND() LIMIT $limit");
+        return $productos;
+    }
+
 
 }
