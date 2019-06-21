@@ -229,4 +229,31 @@ class Productos{
         return $result;
     }
 
+    public function getOne(){
+        $productos = $this->db->query("SELECT * FROM tienda_master.productos WHERE id = {$this->getId()}");
+        return $productos->fetch_object();
+    }
+
+    public function edit(){
+        $sql  = "UPDATE tienda_master.productos SET nombre='{$this->getNombre()}', descripcion='{$this->getDescripcion()}',precio={$this->getPrecio()},stock={$this->getStock()},categoria_id={$this->getCategoria_id()}";
+        if($this->getImagen() != null){
+            $sql.=", imagen='{$this->getImagen()}'";
+        }
+        $sql.= "WHERE id={$this->getId()};";
+        $save = $this->db->query($sql);
+        $result = false;
+
+       /* 
+        echo $sql;
+        echo "</br>";
+        echo $this->db->error;
+        die();
+        */
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+
+
 }
