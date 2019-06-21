@@ -7,6 +7,14 @@ table{
     width: 100%;
 }
 
+div#descrip{
+    clear: both;
+    text-align: center;
+    font-family: 'Advent Pro', sans-serif;
+    padding-top: 20px;
+    align-content: center;
+}
+
 td{
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc; 
@@ -16,6 +24,7 @@ td{
     background-color: #ed4242;
     color:white;
     padding: 20px;
+    display: block;
 }
 
 #menu ul{

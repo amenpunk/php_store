@@ -10,8 +10,6 @@ class productosController
         $producto = $producto->getRandom(6);
         //var_dump($producto->fetch_object());
         require_once 'views/productos/destacados.php';
-
-
     }
 
     public function gestion()
@@ -38,7 +36,7 @@ class productosController
             $stock = $_POST['stock'];
             $categoria = $_POST['categoria'];
             $imagen = $_POST['imagen'];
-       
+
             if (isset($_FILES['imagen'])) {
                 $file = $_FILES['imagen'];
                 $filename = $file['name'];
@@ -67,11 +65,11 @@ class productosController
                 }
             }
 
-            if(isset($_GET['id'])){
+            if (isset($_GET['id'])) {
                 $id = $_GET['id'];
                 $producto->setId($id);
                 $save = $producto->edit();
-            }else{
+            } else {
                 $save = $producto->save();
             }
 
@@ -117,5 +115,16 @@ class productosController
             $pro = $producto->getOne();
             require_once 'views/productos/crear.php';
         }
+    }
+
+    public function ver()
+    {
+        if (isset($_GET[id])) {
+            $id = $_GET['id'];
+            $producto = new Productos();
+            $producto->setId($id);
+            $pro = $producto->getOne();
+        }
+        require_once 'views/productos/ver.php';
     }
 }
