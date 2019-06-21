@@ -75,6 +75,11 @@ class Categorias{
        $categorias = $this->db->query("SELECT * FROM tienda_master.categorias ORDER BY id DESC");
        return $categorias;
     }   
+   
+    public function getOne(){
+       $categorias = $this->db->query("SELECT * FROM tienda_master.categorias WHERE id = {$this->getId()}");
+       return $categorias->fetch_object();
+    } 
     
     public function save(){
         $sql  = "INSERT INTO tienda_master.categorias values(NULL,'{$this->getNombre()}')";

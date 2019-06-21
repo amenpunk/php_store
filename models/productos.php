@@ -239,7 +239,7 @@ class Productos{
         if($this->getImagen() != null){
             $sql.=", imagen='{$this->getImagen()}'";
         }
-        $sql.= "WHERE id={$this->getId()};";
+        $sql.= " WHERE id={$this->getId()};";
         $save = $this->db->query($sql);
         $result = false;
 
@@ -257,6 +257,14 @@ class Productos{
 
     public function getRandom($limit){
         $productos = $this->db->query("SELECT * FROM tienda_master.productos ORDER BY RAND() LIMIT $limit");
+        return $productos;
+    }
+
+    public function getAllCategory(){
+        $sql = "SELECT p.*,c.nombre as cat FROM tienda_master.productos p "
+        ."INNER JOIN tienda_master.categorias c ON c.id = p.categoria_id"
+        ." WHERE p.categoria_id = {$this->getCategoria_id()} ";
+        $productos = $this->db->query($sql);
         return $productos;
     }
 

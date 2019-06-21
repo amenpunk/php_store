@@ -29,7 +29,7 @@
                 <li><a id="primero" href="<?=base_url?>"><i class="fas fa-home"></i></a></li>
                <?php while($cat = $categorias->fetch_object()): ?> 
                     
-                <li><a class="navo" href="#"><?=$cat->nombre?></a></li>
+                <li><a class="navo" href="<?=base_url?>categorias/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a></li>
                 
                 <?php endwhile;?>
                 
