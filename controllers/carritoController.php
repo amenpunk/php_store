@@ -8,7 +8,8 @@ class carritoController
     public function index()
     {
         //echo "contralador carrito, accion index";
-        var_dump($_SESSION['carrito']);
+        $car = $_SESSION['carrito'];
+        require_once 'views/carrito/ver.php';
     }
 
     public function  add()

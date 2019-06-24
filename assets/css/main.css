@@ -133,6 +133,20 @@ a:active{
 }
 */
 
+a#caricon{
+    /*
+    display: block;
+    font-size: 15px !important;
+    color:white !important;
+    float: right;
+    padding-right: 15px;
+    padding-top: 240px;
+    */
+    font-size: 15px;
+    color:white;
+    padding-left: 75px;
+}
+
 input[type="text"],
 input[type="number"],
 input[type="password"],
