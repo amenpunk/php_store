@@ -4,7 +4,7 @@
     <div id="descrip">
         <p><strong>Descripcion:</strong> <?= $pro->descripcion ?></p>
         <p><strong>Precio: </strong> Q. <?= $pro->precio ?></p>
-        <a href="#" class="button">Comprar</a>
+        <a href="<?=base_url?>carrito/add&id=<?=$pro->id?>" class="button">Comprar</a>
     </div>
 <?php else : ?>
     <h1>El producto no existe</h1>
