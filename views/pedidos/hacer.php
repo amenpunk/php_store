@@ -8,13 +8,13 @@
 </div>
     <form action="<?=base_url?>pedidos/add" method="POST">
         <label for="provincia">Departamento</label>
-        <input type="text" name="provincia">
+        <input type="text" name="provincia" required>
         
         <label for="ciudad">Municipio</label>
-        <input type="text" name="ciudad">
+        <input type="text" name="ciudad" required>
         
         <label for="direccion">Direccion</label>
-        <input type="text" name="direccion">
+        <input type="text" name="direccion" required>
         
        <input type="submit" value="Confirmar Pedido"> 
     </form>

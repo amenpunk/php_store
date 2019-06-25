@@ -22,6 +22,6 @@
     <?php endforeach;?>
 </table>
 <?php $stats = Utils::statsCarrito();?>
-<h3 style="float:right; padding-right:15px;">Total Compra: <?=$stats['total']?> </h3>
+<h3 style="float:right; padding-right:15px;">Total Compra: Q.<?=$stats['total']?> </h3>
     </br>
 <a href="<?=base_url?>pedidos/hacer" class="button">Hacer pedido</a>

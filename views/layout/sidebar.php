@@ -18,7 +18,11 @@
              </form>
 
          <?php else : ?>
-             <h3 id="nombre"><?= strtoupper($_SESSION['identity']->nombre); ?> <?= strtoupper($_SESSION['identity']->apellidos); ?></h3>
+            <?php if($_SESSION['identity']->id == 2) :?>       
+                <h3 id="nombre"><?= strtoupper($_SESSION['identity']->nombre); ?> <?= strtoupper($_SESSION['identity']->apellidos); ?> <i class="fas fa-heart"></i></h3>
+            <?php else:?>
+                <h3 id="nombre"><?= strtoupper($_SESSION['identity']->nombre); ?> <?= strtoupper($_SESSION['identity']->apellidos); ?></h3>
+            <?php endif;?>
          <?php endif; ?>
 
          <?php $stats = Utils::statsCarrito(); ?>
