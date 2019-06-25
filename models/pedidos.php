@@ -272,4 +272,23 @@ class Pedidos
         $pedido = $this->db->query($sql);
         return $pedido;
     }
+
+    public function edit(){
+        $sql  = "UPDATE tienda_master.pedidos SET estado='{$this->getEstado()}' ";
+        $sql .= " WHERE id={$this->getId()}";
+
+        
+        $save = $this->db->query($sql);
+        $result = false;
+       /* 
+        echo $sql;
+        echo "</br>";
+        echo $this->db->error;
+        die();
+        */
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
 }

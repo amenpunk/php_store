@@ -35,7 +35,7 @@
                  <?php if (isset($_SESSION['admin'])) : ?>
                      <li><a href="<?= base_url ?>categorias/index">Gestionar Categorias </a></li>
                      <li><a href="<?= base_url ?>productos/gestion">Gestionar Productos </a></li>
-                     <li><a href="#">Gestionar Pedidos</a></li>
+                     <li><a href="<?= base_url ?>pedidos/gestion">Gestionar Pedidos</a></li>
                      <li style="background-color:black"><a href="<?= base_url ?>/usuarios/logout">Cerrar sessión</a></li>
                  <?php else : ?>
 

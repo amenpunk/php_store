@@ -56,7 +56,8 @@ class pedidosController
         }
     }
 
-    public function mis_pedidos(){
+    public function mis_pedidos()
+    {
         Utils::isIdentity();
         $id = $_SESSION['identity']->id;
         $pedido = new Pedidos();
@@ -65,12 +66,13 @@ class pedidosController
         $pedidos = $pedido->getAllByUser();
         require_once 'views/pedidos/mis_pedidos.php';
     }
-    
-    public function detalle(){
+
+    public function detalle()
+    {
         Utils::isIdentity();
-        if(isset($_GET['id'])){
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            
+
             //sacar los datos del pedido
             $pedido = new Pedidos();
             $pedido->setId($id);
@@ -80,10 +82,34 @@ class pedidosController
             $productos = $pedido_productos->getProductoByPedido($id);
 
             require_once 'views/pedidos/detalle.php';
-
-        }else{
-            header("Location:".base_url."pedidos/mis_pedidos");
+        } else {
+            header("Location:" . base_url . "pedidos/mis_pedidos");
         }
     }
 
+    public function gestion()
+    {
+        Utils::isAdmin();
+        $gestion = true;
+        $pedido = new Pedidos();
+        $pedidos = $pedido->getAll();
+        require_once 'views/pedidos/mis_pedidos.php';
+    }
+
+    public function estado()
+    {
+        Utils::isAdmin();
+        if (isset($_POST['pedido_id'])) {
+            $id = $_POST['pedido_id'];
+            $estado = $_POST['estado'];
+            $pedidos = new Pedidos();
+            $pedidos->setId($id);
+            $pedidos->setEstado($estado);
+            $edit = $pedidos->edit();
+            header("Location:".base_url."pedidos/detalle&id=".$id);
+        } else {
+
+            header("Location:" . base_url);
+        }
+    }
 }
