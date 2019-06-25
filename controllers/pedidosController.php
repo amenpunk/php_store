@@ -27,7 +27,9 @@ class pedidosController
             $pedido->setCoste($coste);
             // var_dump($pedido);
             $save = $pedido->save();
-            if ($save) {
+            //guardar linea pedido;
+            $save_linea = $pedido->save_linea();
+            if ($save && $save_linea) {
                 $_SESSION['pedido'] = "complete";
             } else {
                 $_SESSION['pedido'] = "failed";
@@ -36,5 +38,11 @@ class pedidosController
             //redirigi alindex
             header("Location:" . base_url);
         }
+        header("Location:".base_url.'pedidos/confirmado');
+    }
+
+    public function confirmado(){
+        require_once 'views/pedidos/confirmado.php';
     }
 }
+    
