@@ -241,14 +241,15 @@ class Pedidos
         return $result;
     }
 
-    public function getProductoByPedido($id){
-        
+    public function getProductoByPedido($id)
+    {
+
         //$sql = "SELECT * FROM tienda_master.productos WHERE id IN(SELECT producto_id FROM tienda_master.lineas_pedidos "
         //."WHERE pedido_id = {$id})";
 
         $sql = "SELECT pr.*, lp.unidades FROM tienda_master.productos pr "
-        ."INNER JOIN tienda_master.lineas_pedidos lp ON pr.id = lp.producto_id "
-        ."WHERE lp.pedido_id={$id}";
+            . "INNER JOIN tienda_master.lineas_pedidos lp ON pr.id = lp.producto_id "
+            . "WHERE lp.pedido_id={$id}";
         $producto = $this->db->query($sql);
         return $producto;
     }
@@ -256,10 +257,19 @@ class Pedidos
     public function getOneByUser()
     {
         $sql = "SELECT p.id, p.coste FROM tienda_master.pedidos p "
-          //  . "INNER JOIN tienda_master.lineas_pedidos lp ON lp.pedido_id = p.id "
+            //  . "INNER JOIN tienda_master.lineas_pedidos lp ON lp.pedido_id = p.id "
             . "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
 
         $pedido = $this->db->query($sql);
         return $pedido->fetch_object();
+    }
+
+    public function getAllByUser()
+    {
+        $sql = "SELECT p.* FROM tienda_master.pedidos p "
+            . "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC";
+
+        $pedido = $this->db->query($sql);
+        return $pedido;
     }
 }

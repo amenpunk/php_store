@@ -42,7 +42,7 @@
                      <li> <i class="fas fa-shopping-cart"></i> <a " href=" <?= base_url ?>carrito/index">Productos: <?= $stats['count'] ?></a> </li> <li>Total Compra: Q . <?= $stats['total'] ?>
 
 
-                     <li><a href="<?= base_url ?>carrito/index">Mis Pedidos </a></li>
+                     <li><a href="<?= base_url ?>pedidos/mis_pedidos">Mis Pedidos </a></li>
                      <li style="background-color:black"><a href="<?= base_url ?>/usuarios/logout">Cerrar sessión</a></li>
                  <?php endif; ?>
              <?php else : ?>
