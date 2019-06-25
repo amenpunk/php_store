@@ -69,7 +69,7 @@ a:active{
 
 #home{
     color:white;       
-    font-size: 50px;
+    font-size: 45px;
     text-align: center;
     font-family: 'Advent Pro', sans-serif;
 }
@@ -142,9 +142,10 @@ a#caricon{
     padding-right: 15px;
     padding-top: 240px;
     */
-    font-size: 15px;
-    color:white;
-    padding-left: 75px;
+    font-size: 15px !important;
+    color:white !important;
+    padding-left: 125px !important;
+    font-family: monospace;
 }
 
 input[type="text"],
