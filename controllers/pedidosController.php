@@ -38,11 +38,21 @@ class pedidosController
             //redirigi alindex
             header("Location:" . base_url);
         }
-        header("Location:".base_url.'pedidos/confirmado');
+        header("Location:" . base_url . 'pedidos/confirmado');
     }
 
-    public function confirmado(){
-        require_once 'views/pedidos/confirmado.php';
+    public function confirmado()
+    {
+        if (isset($_SESSION['identity'])) {
+            $user = $_SESSION['identity'];
+            $pedido = new Pedidos();
+            $pedido->setUsuario_id($user->id);
+            $pedido = $pedido->getOneByUser();
+
+            $pedido_productos = new Pedidos();
+            $productos = $pedido_productos->getProductoByPedido($pedido->id);
+
+            require_once 'views/pedidos/confirmado.php';
+        }
     }
 }
-    

@@ -115,7 +115,7 @@ a:active{
 }
 
 #lateral{
-    border: 5px solid black;
+    border: 0px solid black;
     width: 22%;
     float: left;
     margin-top:20px;
@@ -132,6 +132,11 @@ a:active{
     padding: 10px;
 }
 */
+
+#lateral h3{
+    padding-top: 15px !important;
+    font-weight: bold;
+}
 
 a#caricon{
     /*
@@ -216,6 +221,7 @@ label{
 
 #lateral ul{
    color:white;
+    font-family: 'Advent Pro', sans-serif;
    /*
    margin-top: 60px; 
    margin-bottom: 20px; 
@@ -224,7 +230,9 @@ label{
 #lateral ul li a{
     color: white;
     font-size: 14px;
+    font-family: 'Advent Pro', sans-serif;
 }
+
 
 #lateral ul li{
     background-color: #ed4242;
@@ -234,6 +242,7 @@ label{
     text-align: center;
     padding: 5px;
     margin-bottom: 5px; 
+    font-family: 'Advent Pro', sans-serif;
 }
 
 input[type="file"]{

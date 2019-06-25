@@ -21,7 +21,6 @@
                 <?php $stats = Utils::statsCarrito(); ?>
                 <!--
                 <a id="caricon" href="<?=base_url?>carrito/index"><?=$stats['count']?><i class="fas fa-shopping-cart"></i> Total:<?=$stats['total']?></a> -->
-                <a id="caricon" href="<?=base_url?>carrito/index"><i class="fas fa-shopping-cart"></i> Total: Q.<?=$stats['total']?></a>
             </div>
         </header>
 

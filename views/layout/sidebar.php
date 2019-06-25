@@ -18,21 +18,29 @@
              </form>
 
          <?php else : ?>
-             <h3><?= $_SESSION['identity']->nombre ?> <?= $_SESSION['identity']->apellidos ?></h3>
+             <h3 id="nombre"><?= strtoupper($_SESSION['identity']->nombre); ?> <?= strtoupper($_SESSION['identity']->apellidos); ?></h3>
          <?php endif; ?>
+
+         <?php $stats = Utils::statsCarrito(); ?>
          <ul style="text-align:center;">
              <!--    
             <li><a href="#">Mis pedidos</a></li>
             gg -->
-             <?php if (isset($_SESSION['admin'])) : ?>
-                 <li><a href="<?=base_url?>categorias/index">Gestionar Categorias </a></li>
-                 <li><a href="<?=base_url?>productos/gestion">Gestionar Productos </a></li>
-                 <li><a href="#">Gestionar Pedidos</a></li>
 
-             <?php endif; ?>
              <?php if (isset($_SESSION['identity'])) : ?>
-                 <li><a href="#">Mis Pedidos </a></li>
-                 <li style="background-color:black"><a href="<?= base_url ?>/usuarios/logout">Cerrar sessión</a></li>
+                 <?php if (isset($_SESSION['admin'])) : ?>
+                     <li><a href="<?= base_url ?>categorias/index">Gestionar Categorias </a></li>
+                     <li><a href="<?= base_url ?>productos/gestion">Gestionar Productos </a></li>
+                     <li><a href="#">Gestionar Pedidos</a></li>
+                     <li style="background-color:black"><a href="<?= base_url ?>/usuarios/logout">Cerrar sessión</a></li>
+                 <?php else : ?>
+
+                     <li> <i class="fas fa-shopping-cart"></i> <a " href=" <?= base_url ?>carrito/index">Productos: <?= $stats['count'] ?></a> </li> <li>Total Compra: Q . <?= $stats['total'] ?>
+
+
+                     <li><a href="<?= base_url ?>carrito/index">Mis Pedidos </a></li>
+                     <li style="background-color:black"><a href="<?= base_url ?>/usuarios/logout">Cerrar sessión</a></li>
+                 <?php endif; ?>
              <?php else : ?>
                  <a href="<?= base_url ?>/usuarios/registro">Registrate aqui</a>
              <?php endif; ?>
