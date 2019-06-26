@@ -37,10 +37,10 @@ class pedidosController
         } else {
             //redirigi alindex
             header("Location:" . base_url);
-            exit();
+            die();
         }
         header("Location:" . base_url . 'pedidos/confirmado');
-        exit();
+        die();
     }
 
     public function confirmado()
@@ -86,7 +86,7 @@ class pedidosController
             require_once 'views/pedidos/detalle.php';
         } else {
             header("Location:" . base_url . "pedidos/mis_pedidos");
-            exit();
+            die();
         }
     }
 
@@ -110,11 +110,11 @@ class pedidosController
             $pedidos->setEstado($estado);
             $edit = $pedidos->edit();
             header("Location:".base_url."pedidos/detalle&id=".$id);
-            exit();
+            die();
         } else {
 
             header("Location:" . base_url);
-            exit();
+            die();
         }
     }
 }

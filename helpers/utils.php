@@ -12,7 +12,7 @@ class Utils{
     public static function isAdmin(){
         if(!isset($_SESSION['admin'])){
             header("Location:".base_url);
-            exit();
+            die();
         }else{
             return true;
         }
@@ -42,7 +42,7 @@ class Utils{
     public static function isIdentity(){
         if(!isset($_SESSION['identity'])){
             header("Location:".base_url);
-            exit();
+            die();
         }else{
             return true;
         }

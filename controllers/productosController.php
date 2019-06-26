@@ -81,7 +81,7 @@ class productosController
             //            var_dump($producto);
         }
         header("Location:" . base_url . 'productos/gestion');
-        exit();
+        die();
     }
 
     public function eliminar()
@@ -101,7 +101,7 @@ class productosController
             }
         }
         header('Location:' . base_url . 'productos/gestion');
-        exit();
+        die();
     }
 
     public function modificar()

@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
 
 RewriteEngine on
-ErrorDocument 404 http://localhost/Tienda/error/
+ErrorDocument 404 https://berserkstore.azurewebsites.net/error/index
 
 RewriteCond  %{SCRIPT_FILENAME} !-d
 RewriteCond  %{SCRIPT_FILENAME} !-f

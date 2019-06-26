@@ -48,6 +48,6 @@ class categoriasController
             $categoria->save();
         }
         header("Location:" . base_url . "categorias/index");
-        exit();
+        die();
     }
 }
