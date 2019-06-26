@@ -46,6 +46,11 @@ td{
     height: 250px;
 }
 
+a.arit{
+    color:green;
+    font-size: 15px;
+}
+
 
 a{
     color:#ed4242;

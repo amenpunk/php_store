@@ -18,7 +18,11 @@
                 <a href="<?= base_url ?>productos/ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
             </td>
             <td>Q.<?= $elemento['precio'] ?></td>
-            <td><?= $elemento['unidades'] ?></td>
+            <td>
+                <?= $elemento['unidades'] ?>
+                <a class="arit" href="<?=base_url?>carrito/up&index=<?=$indice?>"><i class="fas fa-caret-square-up"></i></a>
+                <a class="arit"href="<?=base_url?>carrito/down&index=<?=$indice?>"><i class="fas fa-caret-square-down"></i></a>
+            </td>
             <td><a href="<?=base_url?>carrito/remove&index=<?=$indice?>"> <i style="color:red" class="fas fa-times-circle"></i></a></td>
         </tr>
     <?php endforeach; ?>
