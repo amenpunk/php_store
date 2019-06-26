@@ -19,7 +19,6 @@ class carritoController
             $producto_id = $_GET['id'];
         } else {
             header("Location:" . base_url);
-            die();
         }
 
         //operacion para session del carrito
@@ -51,14 +50,12 @@ class carritoController
         }
 
         header("Location:" . base_url . "carrito/index");
-        die();
     }
 
     public function delete_all()
     {
         unset($_SESSION['carrito']);
         header("Location:" . base_url . "carrito/index");
-        die();
     }
     
     public function remove(){
@@ -66,7 +63,7 @@ class carritoController
             $index = $_GET['index'];
             unset($_SESSION['carrito'][$index]);
             header("Location:" . base_url . "carrito/index");
-            die();
+
         }    
     }
 
@@ -75,7 +72,7 @@ class carritoController
             $index = $_GET['index'];
             $_SESSION['carrito'][$index]['unidades']++;
             header("Location:" . base_url . "carrito/index");
-            die();
+            
         }    
     }
 
@@ -88,7 +85,7 @@ class carritoController
                 unset($_SESSION['carrito'][$index]);
             }
             header("Location:" . base_url . "carrito/index");
-            die();
+            
         }    
     }
 }
