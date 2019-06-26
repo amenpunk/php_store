@@ -1,5 +1,6 @@
 html{
-    background-image: url('/Tienda/assets/img/bamboo.jpg');
+   /* background-image: url('/assets/img/bamboo.jpg'); */
+    background-image:url('/assets/img/bamboo.jpg');
 }
 
 table{
