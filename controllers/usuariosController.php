@@ -34,6 +34,7 @@ class usuariosController{
             $_SESSION['register'] = "failed";
         }
         header("Location:".base_url.'usuarios/registro');
+        exit();
     }
 
     public function login(){
@@ -62,6 +63,7 @@ class usuariosController{
             
         }
         header("Location:".base_url);
+        exit();
     }
 
     public function logout(){
@@ -72,6 +74,7 @@ class usuariosController{
             unset($_SESSION['admin']);
         }
         header("Location:".base_url);
+        exit();
     }
 
 }
